@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>Teachable Machine Image Model</div>
+    <input type="file" id="imageUpload" accept="image/*" />
+    <!-- <button type="button" onclick="init()">Start</button> -->
+    <div id="label-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script type="text/javascript">
+      const URL = "./model/";
+      let model, labelContainer, maxPredictions;
+
+      // Starting the model immediately after page loads
+      window.addEventListener("load", init);
+      async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        document
+          .getElementById("imageUpload")
+          .addEventListener("change", async (event) => {
+            const image = await loadImage(event.target.files[0]);
+            predict(image);
+          });
+
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) {
+          labelContainer.appendChild(document.createElement("div"));
+        }
+      }
+
+      async function loadImage(file) {
+        return new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            const image = new Image();
+            image.onload = () => resolve(image);
+            image.src = event.target.result;
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      function updateProgressBar(index, probability) {
+        const progressBar =
+          labelContainer.childNodes[index].querySelector(".progress-bar");
+        progressBar.style.width = probability * 100 + "%";
+      }
+
+      async function predict(image) {
+        const prediction = await model.predict(image);
+
+        let bestPredictionIndex = 0;
+        let bestPredictionValue = prediction[0].probability;
+
+        for (let i = 1; i < maxPredictions; i++) {
+          if (prediction[i].probability > bestPredictionValue) {
+            bestPredictionIndex = i;
+            bestPredictionValue = prediction[i].probability;
+          }
+        }
+
+        for (let i = 0; i < maxPredictions; i++) {
+          const classPrediction =
+            prediction[i].className +
+            ": " +
+            prediction[i].probability.toFixed(2);
+
+          let classPredictionElement = document.createElement("div");
+          classPredictionElement.innerHTML = classPrediction;
+
+          if (i === bestPredictionIndex) {
+            classPredictionElement.style.fontWeight = "bold";
+          }
+
+          labelContainer.childNodes[i].innerHTML = "";
+          labelContainer.childNodes[i].appendChild(classPredictionElement);
+
+          let progressBarElement = document.createElement("div");
+          progressBarElement.className = "progress-bar";
+          labelContainer.childNodes[i].appendChild(progressBarElement);
+
+          updateProgressBar(i, prediction[i].probability);
+        }
+        alert("prediksi terbaik adalah: " + (bestPredictionIndex + 1));
+      }
+    </script>
+  </body>
+</html>

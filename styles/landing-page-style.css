@@ -1,0 +1,243 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* font-size: 100%;
+  font: inherit; */
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  font-family: "Poppins";
+}
+body {
+  /* background-color: black; */
+  background-color: #010003;
+  height: 200vh;
+}
+/* Navigation */
+nav {
+  width: 100%;
+  height: 8vmin;
+
+  background-color: #3f497f;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#hamburger-menu {
+  display: none;
+}
+.logo {
+  color: #f7c04a;
+  margin-left: 5%;
+  font-size: 1.2em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav .navMenu {
+  /* border: 1px solid red; */
+  margin-right: 5%;
+  width: 35vw;
+  display: flex;
+  gap: 5vmax;
+  justify-content: end;
+}
+nav .navMenu .navMenu-cont a {
+  text-decoration: none;
+  margin: 10px;
+  color: #ffffff;
+}
+.navMenu .getStarted {
+  /* margin: 5%; */
+  color: #3f497f;
+  padding: 5px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+}
+/* Main */
+main {
+  /* border: 10px solid red; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+.did-you-know {
+  margin-top: 6vmin;
+  width: 25%;
+  height: auto;
+}
+main .around-death-cont {
+  width: 60%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+main .around-deaths {
+  /* border: 10px solid red; */
+  width: 100%;
+}
+.earth {
+  width: 40%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+}
+.info {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.5em;
+}
+
+/* PAGE2 */
+.green-section {
+  position: absolute;
+  top: 100vh;
+  width: 30%;
+  height: 100vh;
+  background-color: #539165;
+}
+/* Media Queries */
+/* Mobile Phone */
+@media (max-width: 450px) {
+  #hamburger-menu {
+    display: inline-block;
+  }
+}
+/* Tablet */
+@media (max-width: 768px) {
+}
+/* Laptop */
+@media (max-width: 1366px) {
+}

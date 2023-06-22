@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Style -->
+    <link rel="stylesheet" href="styles/landing-page-style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar start -->
+    <nav class="navbar">
+      <i data-feather="menu" id="hamburger-menu"></i>
+      <a href="#" class="logo">
+        <!-- <img src="temantinjalogo.png" alt="" /> -->
+        TemanTinja
+      </a>
+      <div class="navMenu">
+        <div class="navMenu-cont">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="getStarted-cont">
+          <a class="getStarted" href="#predict">Get Started </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar end -->
+    <main>
+      <img class="did-you-know" src="assets/didyouknow.png" alt="" />
+      <div class="around-death-cont">
+        <img class="around-deaths" src="assets/around-deaths.png" alt="" />
+      </div>
+      <div class="earth-animation"></div>
+      <div class="info">
+        in the world are caused by
+        <span style="background-color: #b31312">digestive disorders</span
+        ><br />(WHO 2019)
+      </div>
+      <video class="earth" autoplay loop>
+        <source src="/assets/earth.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </main>
+    <section>
+      <div class="green-section"></div>
+    </section>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

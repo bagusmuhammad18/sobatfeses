@@ -1,0 +1,17 @@
+#label-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#label-container div {
+  width: 200px;
+  height: 20px;
+  background-color: lightgray;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: green;
+  transition: width 0.3s ease-in-out;
+}
