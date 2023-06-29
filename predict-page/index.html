@@ -4,13 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- Style -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&family=Poppins:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div>Teachable Machine Image Model</div>
-    <input type="file" id="imageUpload" accept="image/*" />
-    <!-- <button type="button" onclick="init()">Start</button> -->
-    <div id="label-container"></div>
+    <nav class="navbar">
+      <i data-feather="menu" id="hamburger-menu"></i>
+      <a href="#" class="logo">
+        <!-- <img src="temantinjalogo.png" alt="" /> -->
+        SobatFeses
+      </a>
+      <div class="navMenu">
+        <div class="navMenu-cont">
+          <a href="#beranda">Beranda</a>
+          <a href="#tentangkami">Tentang Kami</a>
+          <a href="#kontak">Kontak</a>
+        </div>
+        <div class="cobaSekarang-cont">
+          <a class="cobaSekarang" href="#predict">Coba Sekarang</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <h1>Unggah foto feses Anda di sini</h1>
+      <h4>
+        Pastikan foto tersebut memiliki pencahayaan yang baik.<br />Anda dapat
+        menggunakan fitur senter bila diperlukan
+      </h4>
+
+      <div id="imagePreviewContainer">
+        <div class="webcam">
+          <label for="webcamUpload" class="webcam-custom"
+            >Nyalakan Kamera</label
+          >
+          <input
+            id="webcamUpload"
+            type="file"
+            accept="image/*"
+            capture="camera"
+          />
+        </div>
+        <p id="or">atau</p>
+
+        <div class="file">
+          <label for="fileUpload" class="file-custom">Ambil dari Galeri</label>
+          <input id="fileUpload" type="file" accept="image/*" />
+        </div>
+        <img id="imagePreview" hidden />
+      </div>
+      <button id="reuploadButton" hidden>Unggah Ulang</button>
+      <button id="generateButton" hidden>Cek Hasil</button>
+
+      <div id="label-container"></div>
+      <div id="result"></div>
+    </main>
+    <footer></footer>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script type="text/javascript">
@@ -27,16 +82,59 @@
         maxPredictions = model.getTotalClasses();
 
         document
-          .getElementById("imageUpload")
+          .getElementById("webcamUpload")
           .addEventListener("change", async (event) => {
             const image = await loadImage(event.target.files[0]);
-            predict(image);
+            document.getElementById("imagePreview").src = image.src;
+            document.getElementById("reuploadButton").style.display =
+              "inline-block";
+            document.getElementById("generateButton").style.display =
+              "inline-block";
+            document.getElementById("imagePreview").hidden = false;
+            document.querySelector(".webcam").style.display = "none";
+            document.getElementById("or").style.display = "none";
+            document.querySelector(".file").style.display = "none";
           });
+
+        document
+          .getElementById("fileUpload")
+          .addEventListener("change", async (event) => {
+            const image = await loadImage(event.target.files[0]);
+            document.getElementById("imagePreview").src = image.src;
+            document.getElementById("reuploadButton").style.display =
+              "inline-block";
+            document.getElementById("generateButton").style.display =
+              "inline-block";
+            document.getElementById("imagePreview").hidden = false;
+            document.querySelector(".webcam").style.display = "none";
+            document.getElementById("or").style.display = "none";
+            document.querySelector(".file").style.display = "none";
+          });
+        function resetWebState() {
+          document.getElementById("imagePreview").src = "";
+          document.getElementById("reuploadButton").style.display = "none";
+          document.getElementById("generateButton").style.display = "none";
+          document.getElementById("imagePreview").hidden = true;
+          document.querySelector(".webcam").style.display = "block";
+          document.getElementById("or").style.display = "block";
+          document.querySelector(".file").style.display = "block";
+        }
+
+        document
+          .getElementById("reuploadButton")
+          .addEventListener("click", resetWebState);
 
         labelContainer = document.getElementById("label-container");
         for (let i = 0; i < maxPredictions; i++) {
           labelContainer.appendChild(document.createElement("div"));
         }
+
+        document
+          .getElementById("generateButton")
+          .addEventListener("click", () => {
+            const image = document.getElementById("imagePreview");
+            predict(image);
+          });
       }
 
       async function loadImage(file) {
@@ -92,7 +190,10 @@
 
           updateProgressBar(i, prediction[i].probability);
         }
-        alert("prediksi terbaik adalah: " + (bestPredictionIndex + 1));
+
+        const bestPrediction = bestPredictionIndex + 1;
+        document.getElementById("result").innerHTML =
+          "Feses Anda merupakan jenis tipe " + bestPrediction;
       }
     </script>
   </body>
