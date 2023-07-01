@@ -12,22 +12,25 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&family=Poppins:wght@200;300;400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
 
   <body>
     <nav class="navbar">
       <i data-feather="menu" id="hamburger-menu"></i>
       <a href="#" class="logo"> SobatFeses </a>
-      <div class="navMenu">
-        <div class="navMenu-cont">
-          <a href="#beranda">Beranda</a>
-          <a href="#tentang-kami">Tentang Kami</a>
-          <a href="#kontak">Kontak</a>
-        </div>
-        <div class="cobaSekarang-cont">
-          <a class="cobaSekarang" href="./predict-page/index.html"
-            >Coba Sekarang</a
-          >
+      <div class="navbar-nav">
+        <div class="navMenu">
+          <div class="navMenu-cont">
+            <a href="#beranda">Beranda</a>
+            <a href="#tentang-kami">Tentang Kami</a>
+            <a href="#kontak">Kontak</a>
+          </div>
+          <div class="cobaSekarang-cont">
+            <a class="cobaSekarang" href="./predict-page/index.html"
+              >Coba Sekarang</a
+            >
+          </div>
         </div>
       </div>
     </nav>
@@ -55,6 +58,16 @@
           <img src="assets/gemastik-logo.png" alt="gemastik-logo" />
         </div>
       </div>
+      <div class="desc-mobile-container">
+        <p class="desc-mobile">
+          SobatFeses menyediakan layanan untuk mendeteksi dini penyakit
+          pencernaan melalui foto feses manusia.
+        </p>
+        <a class="cobaSekarang-hero-mobile" href="./predict-page/index.html"
+          >Coba Sekarang</a
+        >
+      </div>
+
       <article>
         <h1 class="bolder">Tentang Kami</h1>
         <p>
@@ -121,5 +134,8 @@
         <p>Sekip Utara Bulaksumur Yogyakarta 55281</p>
       </div>
     </footer>
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>

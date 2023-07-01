@@ -145,6 +145,13 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* border: 1px solid green; */
+  width: 100vh;
+}
 
 #hamburger-menu {
   display: none;
@@ -159,11 +166,10 @@ nav {
 
 nav .navMenu {
   /* border: 1px solid red; */
-  margin-right: 5%;
-  width: 41vw;
+  /* width: 41vw; */
   display: flex;
   gap: 5vmax;
-  justify-content: end;
+  /* justify-content: end; */
 }
 nav .navMenu a {
   font-size: 14px;
@@ -184,6 +190,7 @@ nav .navMenu .navMenu-cont a {
   border-radius: 50px;
   text-decoration: none;
   transition: 0.4s;
+  margin-right: 70px;
 }
 .navMenu .cobaSekarang:hover {
   background-color: #ffc017;
@@ -194,6 +201,10 @@ nav .navMenu .navMenu-cont a {
 .navMenu .navMenu-cont a:hover {
   opacity: 0.5;
 }
+#hamburger-menu {
+  display: none;
+}
+
 main {
   background-color: #fbfbfb;
 }
@@ -251,6 +262,9 @@ main {
   font-weight: 400;
   margin-bottom: 30px;
 }
+.desc-mobile {
+  display: none;
+}
 .cobaSekarang-hero {
   /* color: #3f497f; */
   padding: 10px 40px;
@@ -260,7 +274,11 @@ main {
   text-decoration: none;
   transition: 0.4s;
   font-size: 16px;
+  font-size: 2.2vmin;
   font-weight: bold;
+}
+.cobaSekarang-hero-mobile {
+  display: none;
 }
 .hero-logo {
   /* border: 1px solid red; */
@@ -314,6 +332,7 @@ article p {
   justify-content: space-around;
   align-items: center;
   margin-bottom: 40px;
+  flex-wrap: wrap;
 }
 .containerKontakKiri {
   display: flex;
@@ -446,4 +465,249 @@ footer {
 }
 .bolder {
   font-weight: bolder;
+}
+
+/* Mobile Phone */
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 55%;
+    overflow-x: hidden;
+  }
+  #hamburger-menu {
+    display: inline-block;
+    color: white;
+    margin-left: 20px;
+  }
+  .logo {
+    font-size: 1.9em;
+  }
+  .cobaSekarang {
+    display: none;
+  }
+  nav {
+    height: 15vmin;
+  }
+  .navbar {
+    justify-content: left;
+  }
+  .navbar-nav {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    background-color: red;
+    width: 30rem;
+    height: 100vh;
+  }
+  .hero-logo {
+    display: none;
+  }
+  #hero {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: -999;
+  }
+  .hero-desc {
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid red; */
+    position: absolute;
+    /* right: -5vmax; */
+    left: 9vmax;
+    top: 27vmin;
+    width: 74vmin;
+    margin: 0;
+  }
+  .title {
+    line-height: 1.5em;
+    font-size: 2.6em;
+  }
+  .sub-title {
+    font-weight: 400;
+    line-height: 1.3em;
+    margin: 0;
+    font-size: 20px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .desc {
+    margin: 20px 0;
+    font-size: 20px;
+    line-height: 2em;
+    font-weight: 400;
+    margin-bottom: 30px;
+    display: none;
+    /* background-color: #fbfbfb; */
+  }
+  .desc-mobile-container {
+    background-color: white;
+    height: 30vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .desc-mobile {
+    display: inline-block;
+    font-size: 18px;
+    /* border: 1px solid red; */
+    margin: auto 5vw;
+    text-align: justify;
+    line-height: 1.3em;
+  }
+  .cobaSekarang-hero {
+    display: none;
+  }
+  .cobaSekarang-hero-mobile {
+    display: inline-block;
+    padding: 10px 40px;
+    color: #fff;
+    background-color: #3f497f;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.4s;
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    top: -10vmin;
+  }
+  .human {
+    /* width: 1100px; */
+    width: 150vw;
+    height: auto;
+    position: absolute;
+    top: 50vmin;
+    left: -20vmin;
+    /* display: none; */
+  }
+  .circle {
+    height: 35vh;
+    width: 35vh;
+    background-color: #fbfbfb;
+    border-radius: 50%;
+    position: absolute;
+    top: 75vmin;
+    left: 2vmax;
+    z-index: 0;
+    /* display: none; */
+  }
+  article {
+    height: 120vh;
+  }
+  article h1 {
+    margin-bottom: 25px;
+    /* margin-top: 200px; */
+    font-size: 2em;
+  }
+  article p {
+    /* border: 1px solid red; */
+    width: 70%;
+    line-height: 34px;
+    font-size: 1.3em;
+    font-weight: 200;
+    text-align: justify;
+  }
+  .contact {
+    font-size: 2em;
+    margin-top: 1.6em;
+    margin-bottom: 0.8em;
+  }
+  .contactSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  .containerKontakKiri {
+    display: flex;
+    /* margin-bottom: 30px; */
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 0;
+    margin-top: 0;
+    margin: 0;
+    /* border: 10px solid red; */
+    /* height: 100px; */
+  }
+  .gmail-icon {
+    width: 5vh;
+    height: auto; /* sesuaikan tinggi logo */
+    margin: 0;
+    /* margin-right: 20px; sesuaikan jarak antara logo dan teks */
+  }
+  .containerKontakKiri p {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+  }
+  .containerKontakKiri b {
+    display: none;
+  }
+
+  form {
+    gap: 1.5em;
+  }
+  form input,
+  form textarea {
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: 600;
+    font-size: 1.3em;
+    letter-spacing: 0px;
+  }
+  form ::placeholder {
+    color: #606468;
+    font-weight: 400;
+    /* font-size: 1.2em; */
+    opacity: 0.6;
+  }
+  form input {
+    width: 75vw;
+    height: 3em;
+  }
+  form textarea {
+    width: 75vw;
+    height: 30vh;
+    padding-top: 0.6em;
+    resize: none;
+  }
+  form button {
+    font-size: 1.4em;
+    font-weight: 700;
+    width: 15vh;
+    height: 5vh;
+    color: #fbfbfb;
+    background-color: #3f497f;
+    /* margin-bottom: 50px; */
+    letter-spacing: 1px;
+    padding: 0px;
+    cursor: pointer;
+    /* padding-top: 2.5vh; */
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 1.3em;
+  }
+
+  footer {
+    height: 292px;
+    width: 100%;
+    background-color: #3f497f;
+    z-index: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+/* Tablet */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
 }
