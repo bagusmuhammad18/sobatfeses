@@ -4,56 +4,118 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- Feather Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
     <!-- Style -->
     <link rel="stylesheet" href="styles/landing-page-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Poppins"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&family=Poppins:wght@200;300;400;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body>
-    <!-- Navbar start -->
     <nav class="navbar">
       <i data-feather="menu" id="hamburger-menu"></i>
-      <a href="#" class="logo">
-        <!-- <img src="temantinjalogo.png" alt="" /> -->
-        TemanTinja
-      </a>
+      <a href="#" class="logo"> SobatFeses </a>
       <div class="navMenu">
         <div class="navMenu-cont">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          <a href="#beranda">Beranda</a>
+          <a href="#tentang-kami">Tentang Kami</a>
+          <a href="#kontak">Kontak</a>
         </div>
-        <div class="getStarted-cont">
-          <a class="getStarted" href="#predict">Get Started </a>
+        <div class="cobaSekarang-cont">
+          <a class="cobaSekarang" href="#predict">Coba Sekarang</a>
         </div>
       </div>
     </nav>
-    <!-- Navbar end -->
+
     <main>
-      <img class="did-you-know" src="assets/didyouknow.png" alt="" />
-      <div class="around-death-cont">
-        <img class="around-deaths" src="assets/around-deaths.png" alt="" />
+      <div id="hero">
+        <div class="circle"></div>
+        <img class="human" src="assets/human.png" alt="human" />
+        <div class="hero-desc">
+          <h1 class="title bolder">
+            Jaga Kesehatan<br />
+            Pencernaanmu:
+          </h1>
+          <h3 class="sub-title">Deteksi Dini, Raih Kesehatan Optimal!</h3>
+          <p class="desc">
+            SobatFeses menyediakan layanan untuk mendeteksi dini penyakit
+            pencernaan melalui foto feses manusia.
+          </p>
+          <a class="cobaSekarang-hero" href="#predict">Coba Sekarang</a>
+        </div>
+        <div class="hero-logo">
+          <img src="assets/ugm-logo.png" alt="ugm-logo" />
+          <img src="assets/gemastik-logo.png" alt="gemastik-logo" />
+        </div>
       </div>
-      <div class="earth-animation"></div>
-      <div class="info">
-        in the world are caused by
-        <span style="background-color: #b31312">digestive disorders</span
-        ><br />(WHO 2019)
+      <article>
+        <h1 class="bolder">Tentang Kami</h1>
+        <p>
+          Sekitar 1,5 juta manusia di negara berkembang meninggal karena
+          penyakit pencernaan. Penyakit pencernaan, seperti diare dan sembelit
+          dapat menjadi masalah serius bila tidak segera disadari dan ditangani.
+          Salah satu cara untuk mengetahui kondisi pencernaan dapat melalui
+          feses. Oleh karena itu, kami mengembangkan teknologi yang dapat
+          mendeteksi dini penyakit pencernaan melalui foto feses dengan
+          menggunakan teknologi Deep Learning.<br /><br />
+          <b>SobatFeses</b> adalah situs yang menyediakan layanan untuk
+          mendeteksi dini penyakit pencernaan melalui foto feses manusia
+          menggunakan teknologi deep learning secara gratis.<br /><br />
+          Dikembangkan oleh Tim NPC ELB, salah satu tim yang terdiri dari tiga
+          mahasiswa Universitas Gadjah Mada. Tim ini dibentuk untuk mengikuti
+          kompetisi Pagelaran Mahasiswa Nasional Bidang TIK (GEMASTIK) 2023
+          divisi Pengembangan Perangkat Lunak
+        </p>
+      </article>
+      <h1 class="contact bolder">Kontak</h1>
+      <div class="contactSection">
+        <div class="containerKontakKiri">
+          <img
+            class="gmail-icon"
+            src="assets/gmail-icon.png"
+            alt="gmail-icon"
+          />
+          <p><b>Email</b><br />npcelb@gmail.com</p>
+        </div>
+        <div class="containerKontakKanan">
+          <form
+            action="https://formsubmit.co/bagus.muh2001@mail.ugm.ac.id"
+            method="POST"
+          >
+            <input type="text" name="Name" placeholder="Nama Anda" required />
+            <input
+              type="email"
+              name="Email"
+              placeholder="Email Anda"
+              required
+            />
+            <textarea
+              name="Message"
+              placeholder="Pesan Anda"
+              required
+            ></textarea>
+            <input type="hidden" name="_captcha" value="false" />
+            <button type="submit">Kirim</button>
+          </form>
+        </div>
       </div>
-      <video class="earth" autoplay loop>
-        <source src="/assets/earth.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
     </main>
-    <section>
-      <div class="green-section"></div>
-    </section>
-    <script>
-      feather.replace();
-    </script>
+    <footer>
+      <div class="containerKiri">
+        <a href="#faq">FAQ</a>
+        <a href="#tentang-kami">Tentang Kami</a>
+      </div>
+      <div class="containerKanan">
+        <p class="bold">NPC ELB</p>
+        <p>npcelb@gmail.com</p>
+        <br />
+        <p class="bold">Fakultas Matematika dan Ilmu Pengetahuan Alam</p>
+        <p class="bold">Universitas Gadjah Mada</p>
+        <p>Sekip Utara Bulaksumur Yogyakarta 55281</p>
+      </div>
+    </footer>
   </body>
 </html>

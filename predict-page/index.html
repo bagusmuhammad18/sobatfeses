@@ -13,13 +13,11 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <nav class="navbar">
       <i data-feather="menu" id="hamburger-menu"></i>
-      <a href="#" class="logo">
-        <!-- <img src="temantinjalogo.png" alt="" /> -->
-        SobatFeses
-      </a>
+      <a href="#" class="logo"> SobatFeses </a>
       <div class="navMenu">
         <div class="navMenu-cont">
           <a href="#beranda">Beranda</a>
@@ -35,7 +33,7 @@
     <main>
       <h1>Unggah foto feses Anda di sini</h1>
       <h4>
-        Pastikan foto tersebut memiliki pencahayaan yang baik.<br />Anda dapat
+        Pastikan foto tersebut memiliki pencahayaan yang baik<br />Anda dapat
         menggunakan fitur senter bila diperlukan
       </h4>
 
@@ -59,22 +57,42 @@
         </div>
         <img id="imagePreview" hidden />
       </div>
-      <button id="reuploadButton" hidden>Unggah Ulang</button>
-      <button id="generateButton" hidden>Cek Hasil</button>
+      <div class="buttonUnder">
+        <button id="reuploadButton">Unggah Ulang</button>
+        <button id="generateButton">Cek Hasil</button>
+      </div>
 
       <div id="label-container"></div>
       <div id="result"></div>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="containerKiri">
+        <a href="#faq">FAQ</a>
+        <a href="#tentang-kami">Tentang Kami</a>
+      </div>
+      <div class="containerKanan">
+        <p class="bold">NPC ELB</p>
+        <p>npcelb@gmail.com</p>
+        <br />
+        <p class="bold">Fakultas Matematika dan Ilmu Pengetahuan Alam</p>
+        <p class="bold">Universitas Gadjah Mada</p>
+        <p>Sekip Utara Bulaksumur Yogyakarta 55281</p>
+      </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script type="text/javascript">
       const URL = "./model/";
       let model, labelContainer, maxPredictions;
+      let fileUploadInput; // Added variable for file input
 
       // Starting the model immediately after page loads
       window.addEventListener("load", init);
       async function init() {
+        // Initialize fileUploadInput variable
+        fileUploadInput = document.getElementById("fileUpload");
+
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 
@@ -86,38 +104,39 @@
           .addEventListener("change", async (event) => {
             const image = await loadImage(event.target.files[0]);
             document.getElementById("imagePreview").src = image.src;
-            document.getElementById("reuploadButton").style.display =
-              "inline-block";
-            document.getElementById("generateButton").style.display =
-              "inline-block";
+            document.getElementById("reuploadButton").style.visibility =
+              "visible";
+            document.getElementById("generateButton").style.visibility =
+              "visible";
             document.getElementById("imagePreview").hidden = false;
             document.querySelector(".webcam").style.display = "none";
             document.getElementById("or").style.display = "none";
             document.querySelector(".file").style.display = "none";
           });
 
-        document
-          .getElementById("fileUpload")
-          .addEventListener("change", async (event) => {
-            const image = await loadImage(event.target.files[0]);
-            document.getElementById("imagePreview").src = image.src;
-            document.getElementById("reuploadButton").style.display =
-              "inline-block";
-            document.getElementById("generateButton").style.display =
-              "inline-block";
-            document.getElementById("imagePreview").hidden = false;
-            document.querySelector(".webcam").style.display = "none";
-            document.getElementById("or").style.display = "none";
-            document.querySelector(".file").style.display = "none";
-          });
+        fileUploadInput.addEventListener("change", async (event) => {
+          const image = await loadImage(event.target.files[0]);
+          document.getElementById("imagePreview").src = image.src;
+          document.getElementById("reuploadButton").style.visibility =
+            "visible";
+          document.getElementById("generateButton").style.visibility =
+            "visible";
+          document.getElementById("imagePreview").hidden = false;
+          document.querySelector(".webcam").style.display = "none";
+          document.getElementById("or").style.display = "none";
+          document.querySelector(".file").style.display = "none";
+        });
+
         function resetWebState() {
           document.getElementById("imagePreview").src = "";
-          document.getElementById("reuploadButton").style.display = "none";
-          document.getElementById("generateButton").style.display = "none";
+          document.getElementById("reuploadButton").style.visibility = "hidden";
+          document.getElementById("generateButton").style.visibility = "hidden";
           document.getElementById("imagePreview").hidden = true;
           document.querySelector(".webcam").style.display = "block";
           document.getElementById("or").style.display = "block";
           document.querySelector(".file").style.display = "block";
+
+          clearFileInput(fileUploadInput); // Clear file input value
         }
 
         document
@@ -194,6 +213,19 @@
         const bestPrediction = bestPredictionIndex + 1;
         document.getElementById("result").innerHTML =
           "Feses Anda merupakan jenis tipe " + bestPrediction;
+      }
+
+      function clearFileInput(fileInput) {
+        try {
+          fileInput.value = ""; // For most browsers
+          if (fileInput.value) {
+            // For IE11, Opera, Safari, etc.
+            fileInput.type = "text";
+            fileInput.type = "file";
+          }
+        } catch (error) {
+          console.log(error);
+        }
       }
     </script>
   </body>
