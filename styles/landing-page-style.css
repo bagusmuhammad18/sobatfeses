@@ -125,9 +125,7 @@ table {
 * {
   font-family: "Poppins", sans-serif;
 }
-html {
-  overflow-x: hidden;
-}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -233,9 +231,10 @@ main {
 
 .human {
   /* width: 1100px; */
-  width: 80vw;
+  width: 80vmax;
   height: auto;
-  position: absolute;
+  position: relative;
+  /* position: absolute; */
   bottom: 0;
   /* display: none; */
 }
@@ -312,6 +311,7 @@ article {
   justify-content: center;
   align-items: center;
   color: white;
+  /* border: 1px solid red; */
 }
 article h1 {
   margin-bottom: 50px;
@@ -505,6 +505,7 @@ footer {
   }
   #hero {
     height: 50vh;
+    width: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -524,6 +525,7 @@ footer {
   .title {
     line-height: 1.5em;
     font-size: 2.6em;
+    font-size: 7vmin;
   }
   .sub-title {
     font-weight: 400;
@@ -571,7 +573,7 @@ footer {
     border-radius: 50px;
     text-decoration: none;
     transition: 0.4s;
-    font-size: 22px;
+    font-size: 5vmin;
     font-weight: bold;
     position: relative;
     top: -10vmin;
@@ -598,6 +600,10 @@ footer {
   }
   article {
     height: 120vh;
+    height: 1000px;
+    height: auto;
+    overflow: hidden;
+    padding: 50px 0;
   }
   article h1 {
     margin-bottom: 25px;
@@ -606,7 +612,7 @@ footer {
   }
   article p {
     /* border: 1px solid red; */
-    width: 70%;
+    width: 80%;
     line-height: 34px;
     font-size: 1.3em;
     font-weight: 200;
