@@ -125,28 +125,41 @@ table {
 * {
   font-family: "Poppins", sans-serif;
 }
+html {
+  /* overflow-x: hidden; */
+}
 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   /* padding: 20px; */
 }
-
 /* Navigation */
 nav {
-  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 10vmin;
+  border-bottom: 2px solid black;
 
   background-color: #3f497f;
-  z-index: 999999;
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
 }
-
-#hamburger-menu {
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* border: 1px solid green; */
+  width: 100vh;
+}
+.mobile-faq {
   display: none;
 }
+
 .logo {
   color: #fbfbfb;
   margin-left: 5%;
@@ -157,11 +170,10 @@ nav {
 
 nav .navMenu {
   /* border: 1px solid red; */
-  margin-right: 5%;
-  width: 41vw;
+  /* width: 41vw; */
   display: flex;
   gap: 5vmax;
-  justify-content: end;
+  /* justify-content: end; */
 }
 nav .navMenu a {
   font-size: 14px;
@@ -182,6 +194,7 @@ nav .navMenu .navMenu-cont a {
   border-radius: 50px;
   text-decoration: none;
   transition: 0.4s;
+  margin-right: 70px;
 }
 .navMenu .cobaSekarang:hover {
   background-color: #ffc017;
@@ -192,6 +205,9 @@ nav .navMenu .navMenu-cont a {
 .navMenu .navMenu-cont a:hover {
   opacity: 0.5;
 }
+#hamburger-menu {
+  display: none;
+}
 
 main {
   margin: 50px 0;
@@ -199,18 +215,22 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100vw;
+  left: 0;
+  right: 0;
+  font-size: 20px;
 }
+
 .hasil {
-  font-size: 1.9em;
+  /* font-size: 1.9em; */
+  font-size: 30px;
 }
-main * {
-}
+
 main h4 {
   font-weight: 400;
-  line-height: 1.3em;
-  font-size: 1.4em;
+  line-height: 1.6em;
+  /* font-size: 1.4em; */
   margin: 40px 0;
+  text-align: center;
 }
 .advice {
   width: 80vw;
@@ -219,10 +239,30 @@ main h4 {
 main p {
   font-weight: 400;
   line-height: 1.5em;
-  font-size: 1.5em;
+  /* font-size: 1.5em; */
 }
+.advice-num {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.nomor {
+  background-color: #3f497f;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  padding: 1px;
+  font-size: 20px;
+  color: white;
+  /* background: #fff; */
+  text-align: center;
+  display: inline-block;
+}
+
 .smaller {
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
 }
 b {
   font-weight: 700;
@@ -230,12 +270,10 @@ b {
 .containerBig,
 .containerSmall {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 3em;
   flex-wrap: wrap;
   margin-bottom: 50px;
-  /* border: 1px solid red; */
 }
 .containerBig .kiwi,
 .containerBig .alpukat,
@@ -265,7 +303,7 @@ b {
   /* border: 1px solid red; */
 }
 .containerBig span {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -274,7 +312,7 @@ b {
   position: relative;
 }
 .containerBig .child {
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
 }
 .containerSmall img {
   height: 5em;
@@ -286,7 +324,9 @@ summary {
   width: 85vw;
   /* margin: 60px 0; */
 }
-
+summary p {
+  text-align: center;
+}
 footer {
   height: 292px;
   width: 100%;
@@ -305,6 +345,7 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
 }
+
 .containerKiri a {
   text-decoration: none;
   color: white;
@@ -315,7 +356,7 @@ footer {
 }
 .containerKanan {
   /* border: 1px solid red; */
-
+  /* width: 70vw; */
   color: white;
   font-weight: 300;
   font-size: 15px;
@@ -325,4 +366,109 @@ footer {
 }
 .bold {
   font-weight: 600;
+}
+/* Mobile Phone */
+@media screen and (max-width: 600px) {
+  * {
+    scroll-padding-top: 20vmin; /* 10height of sticky header */
+  }
+  html {
+    font-size: 55%;
+    overflow-x: hidden;
+  }
+  #hamburger-menu {
+    display: inline-block;
+    color: white;
+    margin-left: 20px;
+  }
+  .logo {
+    font-size: 1.9em;
+  }
+  .cobaSekarang {
+    display: none;
+  }
+  nav {
+    height: 15vmin;
+  }
+  .navbar {
+    justify-content: left;
+  }
+  .navbar-nav {
+    position: absolute;
+    top: 15vmin;
+    left: -100%;
+    /* left: -0%; */
+    background-color: #3f497f;
+    width: 70vw;
+    height: 100vh;
+    z-index: 10;
+    transition: 0.3s;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar-nav.active {
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .navMenu {
+    gap: 0;
+  }
+  .mobile-faq {
+    display: inline-block;
+  }
+  nav .navMenu .navMenu-cont {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    justify-content: center;
+    /* align-items: center; */
+  }
+  nav .navMenu .navMenu-cont a {
+    margin: 34px 0px;
+    font-size: 2em;
+  }
+  br {
+    display: none;
+  }
+  main h4 {
+    font-weight: 400;
+    line-height: 1.6em;
+    /* font-size: 1.4em; */
+    margin: 40px 25px;
+    text-align: justify;
+    /* border: 1px solid red; */
+  }
+
+  .containerBig img {
+    height: 6em;
+    padding: 5px;
+    margin: 5px;
+    /* border: 1px solid red; */
+  }
+  summary p {
+    text-align: justify;
+  }
+
+  /* Footer start */
+  footer {
+    height: 292px;
+    width: 100%;
+    background-color: #3f497f;
+    z-index: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  /* Footer end */
+}
+/* Tablet */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
 }

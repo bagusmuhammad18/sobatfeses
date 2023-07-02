@@ -2,34 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+    <title>SobatFeses</title>
+    <link rel="icon" href="../assets/pavicon.png" />
     <!-- Style -->
-    <link
-      rel="stylesheet"
-      href="../styles/sembelit.css
-    "
-    />
+    <link rel="stylesheet" href="../styles/sembelit.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&family=Poppins:wght@200;300;400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
 
   <body>
     <nav class="navbar">
       <i data-feather="menu" id="hamburger-menu"></i>
-      <a href="#" class="logo"> SobatFeses </a>
-      <div class="navMenu">
-        <div class="navMenu-cont">
-          <a href="#beranda">Beranda</a>
-          <a href="#tentangkami">Tentang Kami</a>
-          <a href="#kontak">Kontak</a>
-        </div>
-        <div class="cobaSekarang-cont">
-          <a class="cobaSekarang" href="#predict">Coba Sekarang</a>
+      <a href="/index.html" class="logo"> SobatFeses </a>
+      <div class="navbar-nav">
+        <div class="navMenu">
+          <div class="navMenu-cont">
+            <a href="/index.html">Beranda</a>
+            <a href="#tentang-kami">Tentang Kami</a>
+            <a href="#kontak">Kontak</a>
+            <a class="mobile-faq" href="#faq">FAQ</a>
+          </div>
+          <div class="cobaSekarang-cont">
+            <a class="cobaSekarang" href="./predict-page/index.html"
+              >Coba Sekarang</a
+            >
+          </div>
         </div>
       </div>
     </nav>
@@ -38,12 +41,12 @@
       <h2 class="hasil">Hasil</h2>
       <h4>
         Analisis feses Anda menunjukkan kondisi <b>sembelit</b><br />
-        menandakan masalah pencernaan <b>konstipasi kronis</b>
+        yang menandakan masalah pencernaan <b>konstipasi kronis</b>
       </h4>
       <div class="advice">
-        <p>
-          <span class="square">1</span> Perbanyak makan makanan kaya serat,
-          seperti:
+        <p class="advice-num">
+          <div class="nomor">1</div>
+          Perbanyak makan makanan kaya serat, seperti:
         </p>
         <p class="smaller"><b>Buah:</b></p>
         <div class="containerBig">
@@ -74,13 +77,13 @@
             <img class="merah" src="../assets/merah.png" alt="merah" />
             <p class="child">Kacang Merah</p>
           </span>
-          <span class="almond">
-            <img class="almond" src="../assets/almond.png" alt="almond" />
-            <p class="child">Kacang Almond</p>
-          </span>
           <span class="mete">
             <img class="mete" src="../assets/mete.png" alt="mete" />
             <p class="child">Kacang Mete</p>
+          </span>
+          <span class="almond">
+            <img class="almond" src="../assets/almond.png" alt="almond" />
+            <p class="child">Kacang Almond</p>
           </span>
           <span class="hijau">
             <img class="hijau" src="../assets/hijau.png" alt="hijau" />
@@ -96,8 +99,8 @@
           </span>
         </div>
         <p>
-          <span class="square">2</span> Minum air mineral minimal 8 gelas atau 2
-          liter sehari
+          <div class="nomor">2</div>
+          Minum air mineral minimal 8 gelas atau 2 liter sehari
         </p>
         <div class="containerSmall">
           <img class="gelas" src="../assets/gelas.png" alt="gelas" />
@@ -109,11 +112,15 @@
           <img class="gelas" src="../assets/gelas.png" alt="gelas" />
           <img class="gelas" src="../assets/gelas.png" alt="gelas" />
         </div>
-        <p>3 Melakukan aktivitas fisik atau berolahraga</p>
+
+        <p>
+          <div class="nomor">3</div>
+          Melakukan aktivitas fisik atau berolahraga
+        </p>
         <div class="containerBig">
           <span class="tali">
-            <img class="tali" src="../assets/tali.png" alt="lompat-tali" />
-            <p class="child">Lompat Tali</p>
+            <img class="tali" src="../assets/skipping.png" alt="lompat-tali" />
+            <p class="child">Skipping</p>
           </span>
           <span class="yoga">
             <img class="yoga" src="../assets/yoga.png" alt="yoga" />
@@ -151,11 +158,15 @@
       <div class="containerKanan">
         <p class="bold">NPC ELB</p>
         <p>npcelb@gmail.com</p>
-        <br />
-        <p class="bold">Fakultas Matematika dan Ilmu Pengetahuan Alam</p>
+        <!-- <p class="bold">Fakultas Matematika dan Ilmu Pengetahuan Alam</p>
         <p class="bold">Universitas Gadjah Mada</p>
-        <p>Sekip Utara Bulaksumur Yogyakarta 55281</p>
+        <p>Sekip Utara Bulaksumur Yogyakarta 55281</p> -->
       </div>
     </footer>
+    <script>
+      feather.replace();
+    </script>
+    <script src="../js/sembelit.js" type="text/javascript"></script>
+
   </body>
 </html>
