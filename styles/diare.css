@@ -268,26 +268,21 @@ b {
   flex-wrap: wrap;
   margin-bottom: 50px;
 }
-.containerBig .kiwi,
-.containerBig .alpukat,
-.containerBig .pir,
-.containerBig .apel,
-.containerBig .pepaya,
-.containerBig .merah,
-.containerBig .almond,
-.containerBig .mete,
-.containerBig .hijau,
-.containerBig .pistachio,
-.containerBig .tali,
-.containerBig .yoga,
-.containerBig .fitness,
-.containerBig .sepeda,
-.containerBig .jogging {
+.containerBig .kopi,
+.containerBig .seblak,
+.containerBig .jeruk,
+.containerBig .sambal,
+.containerBig .rujak,
+.containerBig .oralit,
+.containerBig .kelapa {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   /* border: 1px solid red; */
+}
+.second {
+  justify-content: flex-start;
 }
 .containerBig img {
   height: 8em;
@@ -312,6 +307,9 @@ b {
   /* padding: 10px; */
   margin: 10px 0;
 }
+.istirahat {
+  margin: 10px;
+}
 
 summary {
   width: 85vw;
@@ -319,6 +317,7 @@ summary {
 }
 summary p {
   text-align: center;
+  margin: 50px 0;
 }
 footer {
   height: 292px;
@@ -436,12 +435,26 @@ footer {
   .advice {
     margin: 0 25px;
   }
+  .second {
+    justify-content: center;
+  }
 
   .containerBig img {
     height: 6em;
     padding: 5px;
     margin: 5px;
     /* border: 1px solid red; */
+  }
+  .istirahat {
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .istirahat img {
+    width: 85vw;
+    text-align: center;
+    /* display: inline-block; */
   }
   summary p {
     text-align: justify;

@@ -158,9 +158,6 @@ nav {
   /* border: 1px solid green; */
   width: 100vh;
 }
-.mobile-faq {
-  display: none;
-}
 
 .logo {
   color: #fbfbfb;
@@ -544,9 +541,6 @@ footer {
   }
   nav .navMenu {
     gap: 0;
-  }
-  .mobile-faq {
-    display: inline-block;
   }
   nav .navMenu .navMenu-cont {
     display: flex;

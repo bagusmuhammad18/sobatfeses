@@ -103,10 +103,7 @@ section {
 body {
   line-height: 1;
 }
-ol,
-ul {
-  list-style: none;
-}
+
 blockquote,
 q {
   quotes: none;
@@ -124,6 +121,7 @@ table {
 }
 * {
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 html {
   /* overflow-x: hidden; */
@@ -209,116 +207,57 @@ nav .navMenu .navMenu-cont a {
 main {
   margin: 50px 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   left: 0;
   right: 0;
   font-size: 20px;
+  margin: 50px 15vw;
+  /* margin-bottom: 20vh; */
+  /* border: 1px solid red; */
 }
 
-.hasil {
+.FAQ {
   /* font-size: 1.9em; */
   font-size: 30px;
+  margin-bottom: 30px;
+  /* border: 1px solid red; */
+  text-align: center;
+  /* width: max-content; */
+}
+main div {
+  line-height: 1.3em;
 }
 
-main h4 {
-  font-weight: 400;
-  line-height: 1.6em;
-  /* font-size: 1.4em; */
-  margin: 40px 0;
-  text-align: center;
-}
-main p {
-  font-weight: 400;
+ol {
+  list-style-type: none;
+  counter-reset: my-counter;
+  padding-left: 0;
   line-height: 1.5em;
-  /* font-size: 1.5em; */
-}
-.advice-num {
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  /* border: 1px solid red; */
+  text-align: justify;
 }
 
-.nomor {
-  background-color: #3f497f;
-  border-radius: 50%;
-  width: 17px;
-  height: 17px;
-  padding: 1px;
-  font-size: 20px;
-  color: white;
-  /* background: #fff; */
-  text-align: center;
-  display: inline-block;
-}
-
-.smaller {
-  /* font-size: 1.2em; */
-}
-b {
-  font-weight: 700;
-}
-.containerBig,
-.containerSmall {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
-}
-.containerBig .kiwi,
-.containerBig .alpukat,
-.containerBig .pir,
-.containerBig .apel,
-.containerBig .pepaya,
-.containerBig .merah,
-.containerBig .almond,
-.containerBig .mete,
-.containerBig .hijau,
-.containerBig .pistachio,
-.containerBig .tali,
-.containerBig .yoga,
-.containerBig .fitness,
-.containerBig .sepeda,
-.containerBig .jogging {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  /* border: 1px solid red; */
-}
-.containerBig img {
-  height: 8em;
-  padding: 10px;
-  margin: 10px;
-  /* border: 1px solid red; */
-}
-.containerBig span {
-  margin-bottom: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10em;
-  /* border: 1px solid red; */
+li {
   position: relative;
 }
-.containerBig .child {
-  /* font-size: 1.2em; */
-}
-.containerSmall img {
-  height: 5em;
-  /* padding: 10px; */
-  margin: 10px 0;
+
+li::before {
+  content: counter(my-counter) ".";
+  counter-increment: my-counter;
+  font-weight: bold;
+  position: absolute;
+  left: -1.5em;
 }
 
-summary {
-  width: 85vw;
-  /* margin: 60px 0; */
+.question {
+  font-weight: bold;
 }
-summary p {
-  text-align: center;
+.answer {
+  /* text-indent: 1em; */
+  margin-left: 0.8em;
+  margin-bottom: 1em;
 }
 footer {
   height: 292px;
@@ -410,7 +349,6 @@ footer {
   nav .navMenu {
     gap: 0;
   }
-
   nav .navMenu .navMenu-cont {
     display: flex;
     flex-direction: column;
@@ -423,7 +361,10 @@ footer {
     font-size: 2em;
   }
   br {
-    display: none;
+    /* display: none; */
+  }
+  .kerja-bagus {
+    text-align: center;
   }
   main h4 {
     font-weight: 400;
@@ -434,7 +375,9 @@ footer {
     /* border: 1px solid red; */
   }
   .advice {
-    margin: 0 25px;
+    /* width: 80vw; */
+    margin: 0px 25px;
+    /* border: 1px solid red; */
   }
 
   .containerBig img {

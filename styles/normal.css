@@ -215,6 +215,8 @@ main {
   left: 0;
   right: 0;
   font-size: 20px;
+  margin-bottom: 20vh;
+  /* border: 1px solid red; */
 }
 
 .hasil {
@@ -229,6 +231,7 @@ main h4 {
   margin: 40px 0;
   text-align: center;
 }
+
 main p {
   font-weight: 400;
   line-height: 1.5em;
@@ -268,11 +271,11 @@ b {
   flex-wrap: wrap;
   margin-bottom: 50px;
 }
-.containerBig .kiwi,
-.containerBig .alpukat,
-.containerBig .pir,
-.containerBig .apel,
-.containerBig .pepaya,
+.containerBig .karbohidrat,
+.containerBig .lauk,
+.containerBig .sayur,
+.containerBig .buah,
+.containerBig .susu,
 .containerBig .merah,
 .containerBig .almond,
 .containerBig .mete,
@@ -410,7 +413,6 @@ footer {
   nav .navMenu {
     gap: 0;
   }
-
   nav .navMenu .navMenu-cont {
     display: flex;
     flex-direction: column;
@@ -423,7 +425,10 @@ footer {
     font-size: 2em;
   }
   br {
-    display: none;
+    /* display: none; */
+  }
+  .kerja-bagus {
+    text-align: center;
   }
   main h4 {
     font-weight: 400;
@@ -434,7 +439,9 @@ footer {
     /* border: 1px solid red; */
   }
   .advice {
-    margin: 0 25px;
+    /* width: 80vw; */
+    margin: 0px 25px;
+    /* border: 1px solid red; */
   }
 
   .containerBig img {
