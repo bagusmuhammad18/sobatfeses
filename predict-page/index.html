@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
     <title>SobatFeses</title>
-    <link rel="icon" href="../assets/pavicon.png" />
+    <link rel="icon" href="../assets/pavicon2.png" />
     <!-- Style -->
     <link rel="stylesheet" href="../styles/upload.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,17 +19,21 @@
   <body>
     <nav class="navbar">
       <i data-feather="menu" id="hamburger-menu"></i>
-      <a href="../index.html" class="logo"> SobatFeses </a>
+      <a class="logo" href="/index.html">
+        <img class="nav-logo" src="/assets/nav-logo.png" alt="" />&nbsp;&nbsp;
+        Sobat
+        <div class="yellow">Feses</div>
+      </a>
       <div class="navbar-nav">
         <div class="navMenu">
           <div class="navMenu-cont">
-            <a href="../index.html">Beranda</a>
-            <a href="../index.html#tentang-kami">Tentang Kami</a>
-            <a href="../index.html#kontak">Kontak</a>
-            <a href="../faq/index.html">FAQ</a>
+            <a href="/index.html">Beranda</a>
+            <a href="/index.html#tentang-kami">Tentang Kami</a>
+            <a href="/index.html#kontak">Kontak</a>
+            <a href="/faq/index.html">FAQ</a>
           </div>
           <div class="cobaSekarang-cont">
-            <a class="cobaSekarang" href="../predict-page/index.html"
+            <a class="cobaSekarang" href="/predict-page/index.html"
               >Coba Sekarang</a
             >
           </div>
@@ -89,6 +93,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script type="text/javascript">
+      if (window.innerWidth <= 600) {
+        document.getElementsByClassName("webcam-custom")[0].style.display =
+          "inline-block";
+        document.getElementById("or").style.display = "inline-block";
+      } else {
+        document.getElementById("or").style.display = "none";
+      }
+
       const URL = "./model/";
       let model, labelContainer, maxPredictions;
       let fileUploadInput; // Added variable for file input
@@ -141,6 +153,8 @@
           document.querySelector(".webcam").style.display = "block";
           document.querySelector(".file").style.display = "block";
           if (window.innerWidth <= 600) {
+            document.getElementsByClassName("webcam-custom")[0].style.display =
+              "inline-block";
             document.getElementById("or").style.display = "inline-block";
           } else {
             document.getElementById("or").style.display = "none";
@@ -239,12 +253,12 @@
           console.log(error);
         }
       }
-      if (innerWidth > 600) {
-        document.getElementsByClassName("file-custom")[0].style.color = "white";
-        document.getElementsByClassName(
-          "file-custom"
-        )[0].style.backgroundColor = "#3f497f";
-      }
+      // if (innerWidth > 600) {
+      //   document.getElementsByClassName("file-custom")[0].style.color = "white";
+      //   document.getElementsByClassName(
+      //     "file-custom"
+      //   )[0].style.backgroundColor = "#3f497f";
+      // }
     </script>
 
     <script>

@@ -151,15 +151,25 @@ nav {
   justify-content: flex-end;
   align-items: center;
   /* border: 1px solid green; */
-  width: 100vh;
+  /* width: 100vh; */
 }
 
 .logo {
-  color: #fbfbfb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 5%;
+  color: #fbfbfb;
+  /* margin-left: 5%; */
   font-size: 1.2em;
   text-decoration: none;
   font-weight: bold;
+}
+.nav-logo {
+  height: 1.2em;
+}
+.yellow {
+  color: #ffc017;
 }
 
 nav .navMenu {
@@ -232,24 +242,28 @@ input[type="file"] {
   font-weight: 600;
   border: 2px solid #3f497f;
   display: inline-block;
-  padding: 10px 50px;
   cursor: pointer;
   border-radius: 50px;
   margin: 10px;
   font-size: 18px;
+  padding: 10px;
+  width: 180px; /* Adjust the width value as needed */
+  text-align: center;
 }
+
 .webcam-custom {
   color: white;
   background-color: #3f497f;
 }
+
 .file-custom {
   color: #3f497f;
   background-color: #fbfbfb;
 }
 
 #imagePreviewContainer {
-  width: 808px;
-  height: 537px;
+  width: 50vw;
+  height: 50vh;
   background-color: #d9d9d9;
   border-radius: 15px;
   margin: auto;
@@ -408,6 +422,9 @@ footer {
     margin: 34px 0px;
     font-size: 2em;
   }
+  main h1 {
+    width: 80%;
+  }
 
   #imagePreviewContainer {
     width: 80vw;
@@ -416,6 +433,7 @@ footer {
   #or {
     font-size: 18px;
   }
+
   /* Footer start */
   footer {
     height: 292px;

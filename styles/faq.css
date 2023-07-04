@@ -131,8 +131,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   /* padding: 20px; */
-}
-/* Navigation */
+} /* Navigation */
 nav {
   top: 0;
   left: 0;
@@ -152,15 +151,25 @@ nav {
   justify-content: flex-end;
   align-items: center;
   /* border: 1px solid green; */
-  width: 100vh;
+  /* width: 100vh; */
 }
 
 .logo {
-  color: #fbfbfb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 5%;
+  color: #fbfbfb;
+  /* margin-left: 5%; */
   font-size: 1.2em;
   text-decoration: none;
   font-weight: bold;
+}
+.nav-logo {
+  height: 1.2em;
+}
+.yellow {
+  color: #ffc017;
 }
 
 nav .navMenu {
