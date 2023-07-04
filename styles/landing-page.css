@@ -353,16 +353,18 @@ article p {
 }
 .contactSection {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
   flex-wrap: wrap;
+  /* border: 1px solid red; */
 }
 .containerKontakKiri {
   display: flex;
-  /* margin-bottom: 30px; */
-  position: relative;
-  top: -150px;
+  margin-bottom: 30px;
+  /* position: relative; */
+  /* top: -150px; */
   /* border: 1px solid red; */
   /* height: 100px; */
 }
@@ -384,7 +386,7 @@ form {
   /* margin: 0 100px; */
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   flex-direction: column;
   gap: 0.7em;
 }
