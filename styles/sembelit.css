@@ -293,7 +293,7 @@ b {
 .containerBig .sepeda,
 .containerBig .jogging {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   /* border: 1px solid red; */
@@ -391,6 +391,127 @@ footer {
 }
 .bold {
   font-weight: 600;
+}
+
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 1025px) {
+  html {
+    font-size: 62.5%;
+  }
+  * {
+    scroll-padding-top: 20vmin; /* 10height of sticky header */
+  }
+  html {
+    font-size: 55%;
+    overflow-x: hidden;
+  }
+  #hamburger-menu {
+    display: inline-block;
+    color: white;
+    margin-left: 30px;
+    height: 4em;
+    width: 4em;
+  }
+  .logo {
+    font-size: 3em;
+    margin: 0 30px;
+  }
+  .cobaSekarang {
+    display: none;
+  }
+  nav {
+    height: 10vmin;
+  }
+
+  .navbar {
+    justify-content: left;
+  }
+  .navbar-nav {
+    position: absolute;
+    top: 10vmin;
+    left: -100%;
+    /* left: -0%; */
+    background-color: #3f497f;
+    width: 70vw;
+    height: 100vh;
+    z-index: 10;
+    transition: 0.3s;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar-nav.active {
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .navMenu {
+    gap: 0;
+  }
+  nav .navMenu .navMenu-cont {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    justify-content: center;
+    /* align-items: center; */
+  }
+  nav .navMenu .navMenu-cont a {
+    margin: 34px 0px;
+    font-size: 3vmin;
+  }
+  br {
+    display: none;
+  }
+  main h4 {
+    font-weight: 400;
+    line-height: 1.6em;
+    /* font-size: 1.4em; */
+    margin: 40px 25px;
+    text-align: justify;
+    /* border: 1px solid red; */
+  }
+  .advice {
+    margin: 0 25px;
+  }
+
+  .containerBig img {
+    height: 6em;
+    padding: 5px;
+    margin: 5px;
+    /* border: 1px solid red; */
+  }
+  summary p {
+    text-align: justify;
+  }
+
+  .backBeranda {
+    font-size: 18px;
+    width: 250px;
+    color: white;
+    background-color: #3f497f;
+    font-weight: 600;
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin: 30px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  /* Footer start */
+  footer {
+    height: 200px;
+    width: 100%;
+    background-color: #3f497f;
+    z-index: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-direction: column; */
+  }
+  /* Footer end */
 }
 /* Mobile Phone */
 @media screen and (max-width: 600px) {
@@ -505,10 +626,4 @@ footer {
     flex-direction: column;
   }
   /* Footer end */
-}
-/* Tablet */
-@media screen and (max-width: 768px) {
-  html {
-    font-size: 62.5%;
-  }
 }
