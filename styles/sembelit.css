@@ -270,6 +270,9 @@ main p {
 b {
   font-weight: 700;
 }
+.tab-enter {
+  display: none;
+}
 .containerBig,
 .containerSmall {
   display: flex;
@@ -507,6 +510,9 @@ footer {
     text-decoration: none;
     text-align: center;
   }
+  .tab-enter {
+    display: inline-block;
+  }
 
   /* Footer start */
   footer {
@@ -621,6 +627,9 @@ footer {
     margin: 30px;
     text-decoration: none;
     text-align: center;
+  }
+  .tab-enter {
+    display: none;
   }
 
   /* Footer start */

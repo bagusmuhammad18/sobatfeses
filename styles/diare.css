@@ -296,13 +296,22 @@ b {
 .containerBig .oralit,
 .containerBig .kelapa {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   /* border: 1px solid red; */
 }
 .second {
   justify-content: flex-start;
+  align-items: center;
+  margin-top: 15px;
+  /* gap: 5em; */
+  /* border: 1px solid red; */
+}
+.second .child {
+  text-align: center;
+  width: min-content;
+  /* border: 1px solid red; */
 }
 .containerBig img {
   height: 8em;
