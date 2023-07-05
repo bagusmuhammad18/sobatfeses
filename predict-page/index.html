@@ -95,7 +95,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script type="text/javascript">
-      if (window.innerWidth <= 600) {
+      if (window.innerWidth <= 1024) {
         document.getElementsByClassName("webcam-custom")[0].style.display =
           "inline-block";
         document.getElementById("or").style.display = "inline-block";
@@ -161,7 +161,7 @@
           document.getElementById("imagePreview").hidden = true;
           document.querySelector(".webcam").style.display = "block";
           document.querySelector(".file").style.display = "block";
-          if (window.innerWidth <= 600) {
+          if (window.innerWidth <= 1024) {
             document.getElementsByClassName("webcam-custom")[0].style.display =
               "inline-block";
             document.getElementById("or").style.display = "inline-block";
@@ -272,7 +272,7 @@
           console.log(error);
         }
       }
-      if (innerWidth > 600) {
+      if (innerWidth > 1024) {
         document.getElementsByClassName("file-custom")[0].style.color = "white";
         document.getElementsByClassName(
           "file-custom"
