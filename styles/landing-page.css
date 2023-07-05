@@ -443,8 +443,8 @@ form button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 20vh;
-  height: 7vh;
+  width: 8em;
+  height: 3em;
   color: #fbfbfb;
   background-color: #3f497f;
   transition: 0.4s;
@@ -506,6 +506,280 @@ footer {
 }
 .bolder {
   font-weight: bolder;
+}
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 1025px) {
+  html {
+    font-size: 62.5%;
+  }
+  * {
+    scroll-padding-top: 20vmin; /* 10height of sticky header */
+  }
+  html {
+    font-size: 55%;
+    overflow-x: hidden;
+  }
+  #hamburger-menu {
+    display: inline-block;
+    color: white;
+    margin-left: 30px;
+    height: 4em;
+    width: 4em;
+  }
+  .logo {
+    font-size: 3em;
+    margin: 0 30px;
+  }
+  .cobaSekarang {
+    display: none;
+  }
+  nav {
+    height: 10vmin;
+  }
+
+  .navbar {
+    justify-content: left;
+  }
+  .navbar-nav {
+    position: absolute;
+    top: 10vmin;
+    left: -100%;
+    /* left: -0%; */
+    background-color: #3f497f;
+    width: 70vw;
+    height: 100vh;
+    z-index: 10;
+    transition: 0.3s;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar-nav.active {
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .navMenu {
+    gap: 0;
+  }
+  nav .navMenu .navMenu-cont {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    justify-content: center;
+    /* align-items: center; */
+  }
+  nav .navMenu .navMenu-cont a {
+    margin: 34px 0px;
+    font-size: 3vmin;
+  }
+
+  main {
+    background-color: #fbfbfb;
+  }
+
+  #hero {
+    height: 50vh;
+  }
+  .circle {
+    height: 50vh;
+    width: 50vh;
+    background-color: #fbfbfb;
+    border-radius: 50%;
+    position: absolute;
+    top: 27vmax;
+    left: 2vmax;
+    z-index: 0;
+  }
+
+  .human {
+    width: 90vmax;
+    height: auto;
+    position: relative;
+    /* position: absolute; */
+    bottom: -10vmin;
+    left: -17vmin;
+    /* display: none; */
+  }
+  .hero-desc {
+    /* border: 1px solid red; */
+    position: absolute;
+    right: 3vmax;
+    top: 23vmin;
+    width: 45vw;
+    margin: 10px;
+    text-align: justify;
+  }
+
+  .title {
+    /* border: 1px solid red; */
+    text-align: justify;
+    line-height: 1.3em;
+    font-size: 5.4em;
+  }
+
+  .sub-title {
+    font-weight: 600;
+    line-height: 1.3em;
+    margin: 10px 0;
+    font-size: 2.7em;
+  }
+  .desc {
+    margin: 20px 0;
+    font-size: 20px;
+    line-height: 2em;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  .cobaSekarang-hero {
+    /* color: #3f497f; */
+    padding: 10px 40px;
+    color: #fff;
+    background-color: #3f497f;
+    border: 4px solid #3f497f;
+
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.4s;
+    font-size: 16px;
+    font-size: 2.2vmin;
+    font-weight: bold;
+  }
+  .cobaSekarang-hero:active {
+    background-color: #fff;
+    color: #3f497f;
+  }
+  .cobaSekarang-hero-mobile {
+    display: none;
+  }
+  .hero-logo {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 15vh;
+    background-color: #3f497f;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  #hero .hero-logo img {
+    width: auto;
+    height: 70%;
+    margin: 0 10em;
+  }
+
+  article h1 {
+    margin-top: 5vh;
+    margin-bottom: 30px;
+    font-size: 2vmin;
+  }
+  article p {
+    /* border: 1px solid red; */
+    width: 70%;
+    line-height: 37px;
+    font-size: 1.3em;
+    font-size: 1.5vmin;
+    font-weight: 200;
+    text-align: justify;
+    margin-bottom: 5vh;
+  }
+
+  .contact {
+    font-size: 2vmin;
+    margin-top: 1.6em;
+    margin-bottom: 0.8em;
+  }
+  .contactSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  .containerKontakKiri {
+    display: flex;
+    /* margin-bottom: 30px; */
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 0;
+    margin-top: 0;
+    margin: 0;
+    /* border: 10px solid red; */
+    /* height: 100px; */
+  }
+  .gmail-icon {
+    width: 3vh;
+    height: auto;
+    margin: 0;
+  }
+  .containerKontakKiri p {
+    font-size: 1.7em;
+    margin-bottom: 2em;
+  }
+  .containerKontakKiri b {
+    display: none;
+  }
+  form {
+    gap: 1.5em;
+  }
+  form input,
+  form textarea {
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: 600;
+    font-size: 1.7em;
+    letter-spacing: 0px;
+    width: 60vw;
+  }
+  form ::placeholder {
+    color: #606468;
+    font-weight: 400;
+    /* font-size: 1.2em; */
+    opacity: 0.6;
+  }
+  form input {
+    height: 3em;
+  }
+  form textarea {
+    height: 15vh;
+    padding-top: 0.6em;
+    resize: none;
+  }
+  form button {
+    font-size: 1.4em;
+    font-weight: 700;
+    width: 11em;
+    height: 3.5em;
+    color: #fbfbfb;
+    background-color: #3f497f;
+    /* margin-bottom: 50px; */
+    letter-spacing: 1px;
+    padding: 0px;
+    cursor: pointer;
+    /* padding-top: 2.5vh; */
+    border-radius: 20px;
+    margin-top: 1.8em;
+    margin-bottom: 6em;
+  }
+  /* Footer start */
+  footer {
+    height: 200px;
+    width: 100%;
+    background-color: #3f497f;
+    z-index: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-direction: column; */
+  }
+  /* Footer end */
 }
 
 /* Mobile Phone */
@@ -715,9 +989,8 @@ footer {
   }
   .gmail-icon {
     width: 5vh;
-    height: auto; /* sesuaikan tinggi logo */
+    height: auto;
     margin: 0;
-    /* margin-right: 20px; sesuaikan jarak antara logo dan teks */
   }
   .containerKontakKiri p {
     font-size: 1.5em;
@@ -782,10 +1055,4 @@ footer {
     flex-direction: column;
   }
   /* Footer end */
-}
-/* Tablet */
-@media screen and (max-width: 768px) {
-  html {
-    font-size: 62.5%;
-  }
 }

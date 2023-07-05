@@ -306,19 +306,6 @@ input[type="file"] {
   margin-bottom: 80px;
 }
 
-#generateButton {
-  font-size: 18px;
-  width: 250px;
-  color: white;
-  background-color: #3f497f;
-  font-weight: 600;
-  padding: 10px 50px;
-  cursor: pointer;
-  border-radius: 50px;
-  margin: 10px;
-  /* display: none; */
-  visibility: hidden;
-}
 #reuploadButton {
   font-size: 18px;
   width: 250px;
@@ -332,6 +319,25 @@ input[type="file"] {
   margin: 10px;
   /* display: none; */
   visibility: hidden;
+}
+
+#generateButton {
+  font-size: 18px;
+  width: 250px;
+  color: white;
+  background-color: #3f497f;
+  font-weight: 600;
+  padding: 10px 50px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 10px;
+  /* display: none; */
+  visibility: hidden;
+}
+#generateButton:active {
+  background-color: #ffc017;
+  border: none;
+  color: #3f497f;
 }
 
 footer {
