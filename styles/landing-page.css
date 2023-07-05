@@ -595,11 +595,11 @@ footer {
   }
 
   .human {
-    width: 90vmax;
+    width: 120vmin;
     height: auto;
     position: relative;
     /* position: absolute; */
-    bottom: -10vmin;
+    bottom: -14vmin;
     left: -17vmin;
     /* display: none; */
   }
@@ -617,7 +617,7 @@ footer {
     /* border: 1px solid red; */
     text-align: justify;
     line-height: 1.3em;
-    font-size: 5.4em;
+    font-size: 4.1em;
   }
 
   .sub-title {
@@ -679,10 +679,9 @@ footer {
   }
   article p {
     /* border: 1px solid red; */
-    width: 70%;
+    width: 80%;
     line-height: 37px;
-    font-size: 1.3em;
-    font-size: 1.5vmin;
+    font-size: 1.5em;
     font-weight: 200;
     text-align: justify;
     margin-bottom: 5vh;
@@ -942,8 +941,6 @@ footer {
     /* display: none; */
   }
   article {
-    height: 120vh;
-    height: 1000px;
     height: auto;
     overflow: hidden;
     padding: 10px 0;
