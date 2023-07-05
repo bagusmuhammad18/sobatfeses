@@ -214,7 +214,6 @@ nav .navMenu .navMenu-cont a {
 }
 
 main {
-  margin: 50px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -308,6 +307,98 @@ footer {
 .bold {
   font-weight: 600;
 }
+
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 1025px) {
+  html {
+    font-size: 62.5%;
+  }
+  * {
+    scroll-padding-top: 20vmin; /* 10height of sticky header */
+  }
+  html {
+    font-size: 55%;
+    overflow-x: hidden;
+  }
+  #hamburger-menu {
+    display: inline-block;
+    color: white;
+    margin-left: 30px;
+    height: 4em;
+    width: 4em;
+  }
+  .logo {
+    font-size: 3em;
+    margin: 0 30px;
+  }
+  .cobaSekarang {
+    display: none;
+  }
+  nav {
+    height: 10vmin;
+  }
+
+  .navbar {
+    justify-content: left;
+  }
+  .navbar-nav {
+    position: absolute;
+    top: 10vmin;
+    left: -100%;
+    /* left: -0%; */
+    background-color: #3f497f;
+    width: 70vw;
+    height: 100vh;
+    z-index: 10;
+    transition: 0.3s;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar-nav.active {
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .navMenu {
+    gap: 0;
+  }
+  nav .navMenu .navMenu-cont {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    justify-content: center;
+    /* align-items: center; */
+  }
+  nav .navMenu .navMenu-cont a {
+    margin: 34px 0px;
+    font-size: 3vmin;
+  }
+
+  main {
+    margin: 50px 10vw;
+    /* height: 100vh; */
+  }
+
+  .answer {
+    margin-left: 0em;
+  }
+
+  /* Footer start */
+  footer {
+    height: 200px;
+    width: 100%;
+    background-color: #3f497f;
+    z-index: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-direction: column; */
+  }
+  /* Footer end */
+}
 /* Mobile Phone */
 @media screen and (max-width: 600px) {
   * {
@@ -369,34 +460,8 @@ footer {
     margin: 34px 0px;
     font-size: 2em;
   }
-  br {
-    /* display: none; */
-  }
-  .kerja-bagus {
-    text-align: center;
-  }
-  main h4 {
-    font-weight: 400;
-    line-height: 1.6em;
-    /* font-size: 1.4em; */
-    margin: 40px 25px;
-    text-align: justify;
-    /* border: 1px solid red; */
-  }
-  .advice {
-    /* width: 80vw; */
-    margin: 0px 25px;
-    /* border: 1px solid red; */
-  }
-
-  .containerBig img {
-    height: 6em;
-    padding: 5px;
-    margin: 5px;
-    /* border: 1px solid red; */
-  }
-  summary p {
-    text-align: justify;
+  .answer {
+    margin-left: 0em;
   }
 
   /* Footer start */
@@ -411,10 +476,4 @@ footer {
     flex-direction: column;
   }
   /* Footer end */
-}
-/* Tablet */
-@media screen and (max-width: 768px) {
-  html {
-    font-size: 62.5%;
-  }
 }

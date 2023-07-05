@@ -195,6 +195,7 @@ nav .navMenu .navMenu-cont a {
   text-decoration: none;
   margin: 0 10px;
   color: #ffffff;
+  width: max-content;
 }
 .navMenu .cobaSekarang {
   color: #3f497f;
@@ -574,6 +575,7 @@ footer {
   nav .navMenu .navMenu-cont a {
     margin: 34px 0px;
     font-size: 3vmin;
+    width: max-content;
   }
 
   main {

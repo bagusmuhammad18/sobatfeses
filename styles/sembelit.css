@@ -192,6 +192,7 @@ nav .navMenu .navMenu-cont a {
   text-decoration: none;
   margin: 0 10px;
   color: #ffffff;
+  width: max-content;
 }
 .navMenu .cobaSekarang {
   color: #3f497f;
@@ -253,8 +254,8 @@ main p {
 .nomor {
   background-color: #3f497f;
   border-radius: 50%;
-  width: 17px;
-  height: 17px;
+  width: 1em;
+  height: 1em;
   padding: 1px;
   font-size: 20px;
   color: white;
@@ -276,6 +277,7 @@ b {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 50px;
+  /* gap: 1em; */
 }
 .containerBig .kiwi,
 .containerBig .alpukat,
@@ -469,11 +471,17 @@ footer {
     line-height: 1.6em;
     /* font-size: 1.4em; */
     margin: 40px 25px;
-    text-align: justify;
+    text-align: center;
     /* border: 1px solid red; */
   }
   .advice {
     margin: 0 25px;
+  }
+  .advice-num {
+    margin-top: 15px;
+  }
+  .containerSmall {
+    gap: 0.6em;
   }
 
   .containerBig img {
@@ -574,6 +582,7 @@ footer {
   nav .navMenu .navMenu-cont a {
     margin: 34px 0px;
     font-size: 2em;
+    width: max-content;
   }
   br {
     display: none;
@@ -583,7 +592,7 @@ footer {
     line-height: 1.6em;
     /* font-size: 1.4em; */
     margin: 40px 25px;
-    text-align: justify;
+    text-align: center;
     /* border: 1px solid red; */
   }
   .advice {
