@@ -457,15 +457,12 @@ footer {
     font-size: 3vmin;
   }
 
-  br {
-    display: none;
-  }
   main h4 {
     font-weight: 400;
     line-height: 1.6em;
     /* font-size: 1.4em; */
     margin: 40px 0px;
-    width: 70vw;
+    width: 90vw;
     text-align: center;
     /* border: 1px solid red; */
   }

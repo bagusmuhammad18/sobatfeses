@@ -250,6 +250,9 @@ main p {
   align-items: center;
   /* border: 1px solid red; */
 }
+.kacang2an {
+  margin-bottom: 20px;
+}
 
 .nomor {
   background-color: #3f497f;
@@ -264,9 +267,6 @@ main p {
   display: inline-block;
 }
 
-.smaller {
-  /* font-size: 1.2em; */
-}
 b {
   font-weight: 700;
 }

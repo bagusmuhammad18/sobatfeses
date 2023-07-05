@@ -396,6 +396,7 @@ footer {
     justify-content: space-around;
     align-items: center;
     /* flex-direction: column; */
+    
   }
   /* Footer end */
 }
@@ -474,6 +475,5 @@ footer {
     justify-content: space-around;
     align-items: flex-start;
     flex-direction: column;
-  }
   /* Footer end */
 }
