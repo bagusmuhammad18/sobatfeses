@@ -269,6 +269,9 @@ main p {
 b {
   font-weight: 700;
 }
+.higlight {
+  background-color: #ffc017;
+}
 .containerBig,
 .containerSmall {
   display: flex;
@@ -276,16 +279,24 @@ b {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 50px;
+  /* border: 1px solid red; */
 }
 .containerBig .kopi,
 .containerBig .seblak,
 .containerBig .jeruk,
 .containerBig .sambal,
 .containerBig .rujak,
+.containerBig .pepaya,
+.containerBig .rendang,
+.containerBig .supayam,
+.containerBig .buburayam,
+.containerBig .bubursumsum,
+.containerBig .telurrebus,
+.containerBig .guava,
 .containerBig .oralit,
 .containerBig .kelapa {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   /* border: 1px solid red; */
@@ -322,11 +333,31 @@ b {
 
 summary {
   width: 85vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   /* margin: 60px 0; */
 }
-summary p {
+summary .sum {
+  text-align: justify;
+  margin-top: 50px;
+}
+.sum p:nth-child(1) {
   text-align: center;
-  margin: 50px 0;
+}
+.backBeranda {
+  font-size: 18px;
+  width: 250px;
+  color: white;
+  background-color: #3f497f;
+  font-weight: 600;
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 30px;
+  text-decoration: none;
+  text-align: center;
 }
 footer {
   height: 292px;

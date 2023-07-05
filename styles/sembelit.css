@@ -293,7 +293,7 @@ b {
 .containerBig .sepeda,
 .containerBig .jogging {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   /* border: 1px solid red; */
@@ -323,10 +323,33 @@ b {
 }
 
 summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 85vw;
   /* margin: 60px 0; */
 }
-summary p {
+summary .sum {
+  text-align: justify;
+  /* margin: 20px 0; */
+  /* margin-top: 50px; */
+}
+.sum p:nth-child(1) {
+  text-align: center;
+}
+
+.backBeranda {
+  font-size: 18px;
+  width: 250px;
+  color: white;
+  background-color: #3f497f;
+  font-weight: 600;
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 30px;
+  text-decoration: none;
   text-align: center;
 }
 footer {
@@ -454,6 +477,20 @@ footer {
   }
   summary p {
     text-align: justify;
+  }
+
+  .backBeranda {
+    font-size: 18px;
+    width: 250px;
+    color: white;
+    background-color: #3f497f;
+    font-weight: 600;
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin: 30px;
+    text-decoration: none;
+    text-align: center;
   }
 
   /* Footer start */

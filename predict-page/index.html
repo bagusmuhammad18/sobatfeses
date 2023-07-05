@@ -49,6 +49,7 @@
       </h4>
 
       <div id="imagePreviewContainer">
+        <h3 class="clickTo">Klik untuk Menghilangkan Efek Blur</h3>
         <div class="webcam">
           <label for="webcamUpload" class="webcam-custom"
             >Nyalakan Kamera</label
@@ -66,6 +67,7 @@
           <label for="fileUpload" class="file-custom">Ambil dari Galeri</label>
           <input id="fileUpload" type="file" accept="image/*" />
         </div>
+
         <img id="imagePreview" hidden />
       </div>
       <div class="buttonUnder">
@@ -108,6 +110,13 @@
       // Starting the model immediately after page loads
       window.addEventListener("load", init);
       async function init() {
+        document
+          .getElementById("reuploadButton")
+          .addEventListener("click", () => {
+            resetWebState();
+            const imagePreview = document.getElementById("imagePreview");
+            imagePreview.classList.remove("unblur");
+          });
         // Initialize fileUploadInput variable
         fileUploadInput = document.getElementById("fileUpload");
 
@@ -178,6 +187,16 @@
             const image = document.getElementById("imagePreview");
             predict(image);
           });
+
+        function toggleBlur() {
+          const imagePreview = document.getElementById("imagePreview");
+          imagePreview.classList.toggle("unblur");
+          document.querySelector(".clickTo").classList.toggle("clickToIlang");
+        }
+
+        document
+          .getElementById("imagePreview")
+          .addEventListener("click", toggleBlur);
       }
 
       async function loadImage(file) {
@@ -211,34 +230,34 @@
             ": " +
             prediction[i].probability.toFixed(2);
 
-          // let classPredictionElement = document.createElement("div");
-          // classPredictionElement.innerHTML = classPrediction;
+          let classPredictionElement = document.createElement("div");
+          classPredictionElement.innerHTML = classPrediction;
 
-          // if (i === bestPredictionIndex) {
-          //   classPredictionElement.style.fontWeight = "bold";
-          // }
+          if (i === bestPredictionIndex) {
+            classPredictionElement.style.fontWeight = "bold";
+          }
 
-          // labelContainer.childNodes[i].innerHTML = "";
-          // labelContainer.childNodes[i].appendChild(classPredictionElement);
+          labelContainer.childNodes[i].innerHTML = "";
+          labelContainer.childNodes[i].appendChild(classPredictionElement);
 
-          // let progressBarElement = document.createElement("div");
-          // progressBarElement.className = "progress-bar";
-          // labelContainer.childNodes[i].appendChild(progressBarElement);
+          let progressBarElement = document.createElement("div");
+          progressBarElement.className = "progress-bar";
+          labelContainer.childNodes[i].appendChild(progressBarElement);
         }
 
         // const bestPrediction = bestPredictionIndex;
         // document.getElementById("result").innerHTML =
         //   "Masuk ke class: " + bestPrediction;
-        if (bestPredictionIndex === 0) {
-          window.location.href = "sembelit.html";
-          // alert("sembelit");
-        } else if (bestPredictionIndex === 1) {
-          window.location.href = "normal.html";
-          // alert("normal");
-        } else if (bestPredictionIndex === 2) {
-          window.location.href = "diare.html";
-          // alert("diare");
-        }
+        // if (bestPredictionIndex === 0) {
+        //   window.location.href = "sembelit.html";
+        //   // alert("sembelit");
+        // } else if (bestPredictionIndex === 1) {
+        //   window.location.href = "normal.html";
+        //   // alert("normal");
+        // } else if (bestPredictionIndex === 2) {
+        //   window.location.href = "diare.html";
+        //   // alert("diare");
+        // }
       }
 
       function clearFileInput(fileInput) {
@@ -253,12 +272,15 @@
           console.log(error);
         }
       }
-      // if (innerWidth > 600) {
-      //   document.getElementsByClassName("file-custom")[0].style.color = "white";
-      //   document.getElementsByClassName(
-      //     "file-custom"
-      //   )[0].style.backgroundColor = "#3f497f";
-      // }
+      if (innerWidth > 600) {
+        document.getElementsByClassName("file-custom")[0].style.color = "white";
+        document.getElementsByClassName(
+          "file-custom"
+        )[0].style.backgroundColor = "#3f497f";
+      }
+      document
+        .getElementById("imagePreview")
+        .addEventListener("click", unblurImage);
     </script>
 
     <script>
