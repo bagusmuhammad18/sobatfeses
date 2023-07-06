@@ -289,7 +289,7 @@ input[type="file"] {
 }
 .clickTo {
   position: absolute;
-  z-index: 9;
+  z-index: 1;
   visibility: hidden;
   display: flex;
   justify-content: center;
@@ -362,6 +362,7 @@ input[type="file"] {
 }
 #generateButton:active {
   background-color: #ffc017;
+  border: 2px solid #ffc017;
   border: none;
   color: #3f497f;
 }
@@ -572,6 +573,80 @@ input[type="file"] {
   color: white;
   background-color: #3f497f;
 }
+/* Loading */
+.loadingOverlay {
+  position: fixed; /* Stay in place */
+  z-index: 999999999999999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: absolute;
+  z-index: 999999999999999;
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: black; */
+}
+.lds-ellipsis div {
+  /* color: black; */
+  background: white;
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
 footer {
   height: 292px;
   width: 100%;
@@ -702,7 +777,7 @@ footer {
   .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 999999999999999; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -935,19 +1010,6 @@ footer {
     font-size: 18px;
   }
 
-  /* The Modal (background) */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
-  }
-
   /* Modal Content/Box */
   .modal-content {
     position: absolute;
@@ -1027,6 +1089,7 @@ footer {
   /* Modal Content/Box */
   .modal-content-warning {
     position: absolute;
+    z-index: 9999999999999999;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

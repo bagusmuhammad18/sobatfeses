@@ -18,6 +18,11 @@ window.addEventListener("resize", function () {
     labelFile.innerText = "Ambil dari Galeri";
   }
 });
+// Loading Overlay
+let loadingOverlay = document.getElementById("loadingOverlayID");
+document.getElementById("generateButton").onclick = function () {
+  loadingOverlay.classList.toggle("loadingOverlay");
+};
 // Modal Tutorial
 // Get the modal
 let modal = document.getElementById("myModal");
@@ -180,8 +185,12 @@ async function init() {
   }
 
   document.getElementById("generateButton").addEventListener("click", () => {
+    document.getElementById("loading").classList.toggle("lds-ellipsis");
     const image = document.getElementById("imagePreview");
-    predict(image);
+    setTimeout(function () {
+      predict(image);
+    }, 1000);
+    // predict(image);
   });
 
   function toggleBlur() {
@@ -269,6 +278,9 @@ async function predict(image) {
   //   bestPredictionIndex == 2 ||
   //   bestPredictionIndex == 3
   // ) {
+  document.getElementById("loading").classList.toggle("lds-ellipsis");
+  loadingOverlay.classList.toggle("loadingOverlay");
+
   if (bestPredictionValue <= 0.6 || bestPredictionIndex == 3) {
     initializeModalWarning(bestPredictionIndex, secondBestPredictionIndex);
   } else {
