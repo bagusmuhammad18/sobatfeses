@@ -377,6 +377,32 @@ input[type="file"] {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  -webkit-animation-name: zoomIn;
+  -webkit-animation-duration: 0.3s;
+  animation-name: zoomIn;
+  animation-duration: 0.3s;
+}
+/* Add Animation */
+@-webkit-keyframes zoomIn {
+  from {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }
 .modal-content p {
   font-size: 1.5em;
@@ -453,6 +479,32 @@ input[type="file"] {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  -webkit-animation-name: zoomIn;
+  -webkit-animation-duration: 0.3s;
+  animation-name: zoomIn;
+  animation-duration: 0.3s;
+}
+/* Add Animation */
+@-webkit-keyframes zoomIn {
+  from {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }
 
 /* The Close Button */
@@ -466,12 +518,16 @@ input[type="file"] {
   top: 0;
   margin-top: 10px;
   margin-right: 20px;
+  /* border: 1px solid red; */
 }
 
 .closeWarning:hover,
 .closeWarning:focus {
   cursor: pointer;
+  opacity: 0.5;
+  transition: 0.2s;
 }
+
 .modal-content-warning p {
   font-size: 1.5em;
   font-weight: 500;
