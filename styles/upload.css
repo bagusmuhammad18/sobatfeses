@@ -348,7 +348,7 @@ input[type="file"] {
   border: none;
   color: #3f497f;
 }
-
+/* Modal Tutorial  */
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -435,6 +435,66 @@ input[type="file"] {
   width: 30vw;
   height: auto;
   margin-bottom: 15vmin;
+}
+
+/* Modal Warning */
+/* Modal Content/Box */
+.modal-content-warning {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffc017;
+  margin: 0 auto;
+  border-radius: 25px;
+  width: 50%; /* Could be more or less, depending on screen size */
+  height: min-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* The Close Button */
+.closeWarning {
+  color: black;
+  float: right;
+  font-size: 3em;
+  font-weight: 300;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.closeWarning:hover,
+.closeWarning:focus {
+  cursor: pointer;
+}
+.modal-content-warning p {
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 1.6em;
+  margin: 3em 2em 1em 2em;
+  text-align: justify;
+}
+.buttonModal button {
+  border: 3px solid #3f497f;
+  border-radius: 25px;
+  width: 15em;
+  height: 2.5em;
+  margin: 2em;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 700;
+}
+.lanjutkanModal {
+  color: #3f497f;
+}
+.unggahulangModal {
+  color: white;
+  background-color: #3f497f;
 }
 footer {
   height: 292px;
@@ -591,6 +651,7 @@ footer {
     align-items: center;
     flex-direction: column;
   }
+
   .modal-content p {
     font-size: 1.9em;
     line-height: 1.3em;
@@ -649,6 +710,66 @@ footer {
     height: auto;
     margin-bottom: 15vmin;
     margin-bottom: 7em;
+  }
+
+  /* Modal Warning */
+  /* Modal Content/Box */
+  .modal-content-warning {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffc017;
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 60%; /* Could be more or less, depending on screen size */
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* The Close Button */
+  .closeWarning {
+    color: black;
+    float: right;
+    font-size: 3.5em;
+    font-weight: 300;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+
+  .closeWarning:hover,
+  .closeWarning:focus {
+    cursor: pointer;
+  }
+  .modal-content-warning p {
+    font-size: 1.9em;
+    font-weight: 500;
+    line-height: 1.6em;
+    margin: 2.4em 2em 1em 2em;
+    text-align: justify;
+  }
+  .buttonModal button {
+    border: 3px solid #3f497f;
+    border-radius: 25px;
+    width: 13em;
+    height: 2.5em;
+    margin: 1em 1em 1.9em 1em;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+  .lanjutkanModal {
+    color: #3f497f;
+  }
+  .unggahulangModal {
+    color: white;
+    background-color: #3f497f;
   }
   /* Footer start */
   footer {
@@ -824,6 +945,73 @@ footer {
     width: 30vw;
     height: auto;
     margin-bottom: 15vmin;
+  }
+
+  /* Modal Warning */
+  /* Modal Content/Box */
+  .modal-content-warning {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffc017;
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* The Close Button */
+  .closeWarning {
+    color: black;
+    float: right;
+    font-size: 3.5em;
+    font-weight: 300;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+
+  .closeWarning:hover,
+  .closeWarning:focus {
+    cursor: pointer;
+  }
+  .modal-content-warning p {
+    font-size: 1.9em;
+    font-weight: 500;
+    line-height: 1.6em;
+    margin: 2.4em 2em 1em 2em;
+    text-align: justify;
+  }
+  .buttonModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+  }
+  .buttonModal button {
+    border: 3px solid #3f497f;
+    border-radius: 25px;
+    width: 13em;
+    height: 2.5em;
+    margin: 0.7em;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+  .lanjutkanModal {
+    color: #3f497f;
+  }
+  .unggahulangModal {
+    color: white;
+    background-color: #3f497f;
   }
 
   /* Footer start */
