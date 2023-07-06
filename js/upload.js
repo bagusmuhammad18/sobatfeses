@@ -112,6 +112,7 @@ let fileUploadInput; // Added variable for file input
 window.addEventListener("load", init);
 function resetWebState() {
   document.getElementById("imagePreview").src = "";
+  document.getElementsByClassName("clickTo")[0].style.visibility = "hidden";
   document.getElementById("reuploadButton").style.visibility = "hidden";
   document.getElementById("generateButton").style.visibility = "hidden";
   document.getElementById("imagePreview").hidden = true;
@@ -147,6 +148,8 @@ async function init() {
     .addEventListener("change", async (event) => {
       const image = await loadImage(event.target.files[0]);
       document.getElementById("imagePreview").src = image.src;
+      document.getElementsByClassName("clickTo")[0].style.visibility =
+        "visible";
       document.getElementById("reuploadButton").style.visibility = "visible";
       document.getElementById("generateButton").style.visibility = "visible";
       document.getElementById("imagePreview").hidden = false;
@@ -158,6 +161,7 @@ async function init() {
   fileUploadInput.addEventListener("change", async (event) => {
     const image = await loadImage(event.target.files[0]);
     document.getElementById("imagePreview").src = image.src;
+    document.getElementsByClassName("clickTo")[0].style.visibility = "visible";
     document.getElementById("reuploadButton").style.visibility = "visible";
     document.getElementById("generateButton").style.visibility = "visible";
     document.getElementById("imagePreview").hidden = false;
@@ -187,6 +191,9 @@ async function init() {
   }
 
   document.getElementById("imagePreview").addEventListener("click", toggleBlur);
+  document
+    .getElementsByClassName("clickTo")[0]
+    .addEventListener("click", toggleBlur);
 }
 
 async function loadImage(file) {

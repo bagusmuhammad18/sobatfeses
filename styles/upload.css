@@ -280,6 +280,7 @@ input[type="file"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   overflow: hidden;
 }
 .webcam-custom,
@@ -288,15 +289,31 @@ input[type="file"] {
 }
 .clickTo {
   position: absolute;
-  z-index: 99999999;
-  /* display: none; */
+  z-index: 9;
   visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.clickTo-img {
+  margin: 0 0 2em 0;
+  width: 4.5em;
+}
+.clickTo-text {
+  color: white;
+  font-size: 2em;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 .clickToIlang {
   display: none;
 }
 #imagePreview {
   width: 808px;
+  /* width: 80vh; */
   height: auto;
   filter: blur(20px);
   -webkit-filter: blur(20px);
