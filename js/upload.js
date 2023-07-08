@@ -281,7 +281,7 @@ async function predict(image) {
   document.getElementById("loading").classList.toggle("lds-ellipsis");
   loadingOverlay.classList.toggle("loadingOverlay");
 
-  if (bestPredictionValue <= 0.6 || bestPredictionIndex == 3) {
+  if (bestPredictionValue <= 0.5 || bestPredictionIndex == 3) {
     initializeModalWarning(bestPredictionIndex, secondBestPredictionIndex);
   } else {
     goToResultPage(bestPredictionIndex);
