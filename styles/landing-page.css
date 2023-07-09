@@ -127,9 +127,8 @@ table {
   scroll-behavior: smooth;
   scroll-padding-top: 15vmin; /* 10height of sticky header */
 }
-/* html,
-body {
-  overflow-x: hidden;
+/* html * {
+  border: 1px solid red;
 } */
 
 body {
@@ -250,10 +249,11 @@ main {
 
 .human {
   /* width: 1100px; */
-  width: 90vmax;
+  width: 40vmax;
   height: auto;
   position: relative;
   /* position: absolute; */
+  left: 15vmin;
   bottom: -10vmin;
   /* display: none; */
 }
@@ -603,12 +603,12 @@ footer {
   }
 
   .human {
-    width: 120vmin;
+    width: 50vmin;
     height: auto;
     position: relative;
     /* position: absolute; */
     bottom: -14vmin;
-    left: -17vmin;
+    left: 0vmin;
     /* display: none; */
   }
   .hero-desc {
@@ -932,11 +932,11 @@ footer {
   }
   .human {
     /* width: 1100px; */
-    width: 150vw;
+    width: 70vw;
     height: auto;
     position: absolute;
-    top: 50vmin;
-    left: -20vmin;
+    top: 45vmin;
+    left: 2vmin;
     /* display: none; */
   }
   .circle {
