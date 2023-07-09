@@ -127,11 +127,16 @@ table {
   scroll-behavior: smooth;
   scroll-padding-top: 15vmin; /* 10height of sticky header */
 }
+/* html,
+body {
+  overflow-x: hidden;
+} */
 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   background-color: #fbfbfb;
+  /* overflow-x: hidden; */
 
   /* padding: 20px; */
 }
@@ -224,7 +229,7 @@ main {
 }
 
 #hero {
-  width: 100%;
+  /* width: 100%; */
   height: 88vh;
   background-color: #ffc017;
   display: flex;
@@ -513,6 +518,7 @@ footer {
   html {
     font-size: 62.5%;
   }
+
   * {
     scroll-padding-top: 20vmin; /* 10height of sticky header */
   }
@@ -847,13 +853,15 @@ footer {
   .hero-logo {
     display: none;
   }
+
   #hero {
     height: 50vh;
-    width: 100vh;
+    /* width: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: -999;
+    overflow-x: hidden;
   }
   .hero-desc {
     display: flex;
