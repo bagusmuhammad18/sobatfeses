@@ -1,8 +1,16 @@
 // Toggle class active
 const navbarNav = document.querySelector(".navbar-nav");
+const hamburgerMenu = document.querySelector("#hamburger-menu");
 // ketika hamburger menu diklik
-document.querySelector("#hamburger-menu").onclick = () => {
+hamburgerMenu.onclick = () => {
   navbarNav.classList.toggle("active");
+};
+// ketika bagian di luar side menu diklik
+document.body.onclick = (event) => {
+  // periksa apakah klik dilakukan di luar side menu
+  if (!navbarNav.contains(event.target) && event.target !== hamburgerMenu) {
+    navbarNav.classList.remove("active");
+  }
 };
 
 window.addEventListener("resize", function () {
@@ -46,11 +54,11 @@ span.onclick = function () {
 mengerti.onclick = function () {
   modal.style.display = "none";
 };
-// When the user clicks anywhere outside of the modal, close it and trigger the input
+// When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
-    webcamUploadInput.click(); // Trigger the click event of the input element
+    // webcamUploadInput.click(); // Trigger the click event of the input element
   }
 };
 
